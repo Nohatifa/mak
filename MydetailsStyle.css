@@ -1,0 +1,143 @@
+body
+{
+	padding: 0;
+	margin: 0;
+	background-image: url('2.jpg');
+}
+h1{
+position: absolute;
+top:10%;
+left: 50%;
+transform: translate(-50%,-50%);
+text-transform:uppercase;
+font-family: consolas;
+letter-spacing: 5px;
+margin: 0;
+padding: 0;
+color: transparent;
+}
+h1:before
+{
+	content: attr(data-text);
+	position: absolute;
+	top:0;
+	left:0;
+	height: 100%;
+	color: #fff;
+	overflow: hidden;
+	border-right: 1px solid #000;
+	animation: type 13s steps(20) infinite;
+	white-space:nowrap;
+}
+@keyframes type{
+	0%{
+		width: 0;
+	}
+	50%{
+		width: 100%;
+	}
+}
+.backImg{
+	
+	 min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	color: #fff;
+	text-decoration: none;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+ 
+.profile{
+	width:400px;
+	background-color: rgba(0,0,0,0.3);
+	padding: 30px 0;
+	border-radius: 10%;
+}
+.profile a{
+	list-style: none;
+	margin: 0 20px;
+	transition: 0.5s;
+}
+ul{
+	margin:0;
+	padding: 0;
+	display: block;
+}
+ul li{
+	list-style: none;
+	margin: 0 20px;
+	transition: 0.5s;
+}
+ul li a
+{
+	display: block;
+	position:  relative;
+	text-decoration: none;
+	font-size: 24px;
+	font-family: consolas;
+	letter-spacing: 5px;
+	color: #fff;
+	text-transform: none;
+	transition: 0.5s;
+	
+}
+
+	ul:hover li a
+	{
+		transform: scale(1.5);
+		opacity: .2;
+		filter: blur(0px);
+        color: transparent;
+	text-decoration: none;
+	}
+	ul li a:hover
+	{
+		transform: scale(2);
+		opacity: 1;
+		filter: blur(0);
+        
+	}
+	ul li a:before
+	{
+		content: '';
+		position: absolute;
+		top:0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.3);
+		transition: transform 0.5s;
+		transform-origin: right;
+		transform: scaleX(0);
+		z-index: -1;
+	}
+	ul li a:hover:before
+	{
+		transition: 0.5s;
+		transform-origin: left;
+		transform: scaleX(1);
+	}
+
+
+@keyframes animation
+{
+	0%
+	{
+		transform: scale(1);
+	}
+	100%
+	{
+		transform: scale(2);
+	}
+}
+
+
